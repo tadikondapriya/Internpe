@@ -1,0 +1,33 @@
+import java.util.Scanner;
+import java.util.Random;
+public class Game {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        Random r= new Random();
+        String[] choices={"Rock","Paper","Scissors"};
+        System.out.println("Welcom to Rock,Paper,Scissors!!");
+        while (true) {
+            System.out.print("Enter your choice (Rock, Paper, Scissors) or 'quit' to exit: ");
+            String userchoice = sc.nextLine();
+            
+            if (userchoice.equalsIgnoreCase("quit")) {
+                System.out.println("Thanks for playing:)");
+                break;
+            }
+        int computerIndex=r.nextInt(3);
+        String ComputerChoice=choices[computerIndex];
+        System.out.println("Computer choice:"+ComputerChoice);A
+        if(userchoice.equalsIgnoreCase(ComputerChoice)){
+            System.out.println("It's a tie!");
+        }else if((userchoice.equalsIgnoreCase("Rock")&&ComputerChoice.equals("Scissors"))||
+        (userchoice.equalsIgnoreCase("Scissors")&&ComputerChoice.equals("Paper"))||
+        (userchoice.equalsIgnoreCase("Paper")&&ComputerChoice.equals("Rock"))){
+            System.out.println("You Win!");
+        }else{
+            System.out.println("Computer Wins!");
+        }
+        }sc.close();
+
+    }
+
+}
